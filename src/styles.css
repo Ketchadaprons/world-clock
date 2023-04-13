@@ -1,9 +1,6 @@
 body {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgba(216, 241, 230, 0.46) 0.1%,
-    rgba(233, 226, 226, 0.28) 90.1%
-  );
+  background: #bbe4e9;
+
   font-family: sans-serif;
 }
 h1 {
@@ -25,7 +22,7 @@ select {
 .container {
   max-width: 600px;
   margin: 60px auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.715);
   padding: 30px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
