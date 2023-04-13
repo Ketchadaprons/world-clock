@@ -1,13 +1,13 @@
 function updateTime() {
-  let chicagoElement = document.querySelector("#chicago");
-  if (chicagoElement) {
-    let chicagoDateElement = chicagoElement.querySelector(".date");
-    let chicagoTimeElement = chicagoElement.querySelector(".time");
+  let sydneyElement = document.querySelector("#sydney");
+  if (sydneyElement) {
+    let sydneyDateElement = sydneyElement.querySelector(".date");
+    let sydneyTimeElement = sydneyElement.querySelector(".time");
 
-    let chicagoTime = moment().tz("America/Chicago");
+    let sydneyTime = moment().tz("Australia/Sydney");
 
-    chicagoDateElement.innerHTML = chicagoTime.format("MMMM Do YYYY");
-    chicagoTimeElement.innerHTML = chicagoTime.format(
+    sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
+    sydneyTimeElement.innerHTML = sydneyTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
@@ -27,6 +27,9 @@ function updateTime() {
 }
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   console.log(cityTimeZone);
   let cityTime = moment().tz(cityTimeZone);
